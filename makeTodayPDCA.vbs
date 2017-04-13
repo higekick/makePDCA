@@ -15,7 +15,7 @@ Dim str_to
 str_to   = GetDayFile(0)
 
 'ファイルがまだなければひな形からコピー
-If objFS.FileExists(todayFile) = False Then
+If objFS.FileExists(str_to) = False Then
     Call objFS.CopyFile(str_from, str_to)
 End If
 
