@@ -6,10 +6,10 @@ Set objFS = CreateObject("Scripting.FileSystemObject")
 Set objWSH_FUNC = objFS.OpenTextFile(".\getDayFile.vbs")
 ExecuteGlobal objWSH_FUNC.ReadAll()
 objWSH_FUNC.Close
- 
+
 'ひな形ファイル名取得
 Dim str_from
-str_from = objWshShell.CurrentDirectory & "\" & "hinagata.txt"
+str_from = objWshShell.CurrentDirectory & "\" & "hinagata.md"
 'コピー先ファイル名取得
 Dim str_to
 str_to   = GetDayFile(0)
@@ -24,4 +24,4 @@ Set objWSH_FUNC = Nothing
 Set objFS = Nothing
 
 'ファイルオープン
-CreateObject("Shell.Application").ShellExecute str_to
+OpenFileBySpecificApp(str_to)

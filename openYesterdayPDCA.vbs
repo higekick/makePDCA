@@ -14,12 +14,12 @@ yesterDayFile = GetDayFile(-1)
 
 If objFS.FileExists(yesterDayFile) = True Then
     '昨日のファイルをオープン
-    CreateObject("Shell.Application").ShellExecute yesterdayFile
+    OpenFileBySpecificApp(yesterdayFile)
 elseif lngWeekday = vbMonday Then
     '昨日のファイルが存在しなくて、月曜日なら金曜日のファイルを開く
     Dim friDayFile
     friDayFile = GetDayFile(-3)
-    CreateObject("Shell.Application").ShellExecute friDayFile
+    OpenFileBySpecificApp(friDayFile)
 End If
 
 Set objFS = Nothing

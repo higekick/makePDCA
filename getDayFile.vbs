@@ -13,6 +13,17 @@ Function GetDayFile(addDay)
    strFormattedDay = DateAdd("d", addDay, strFormattedToday)
    strFormattedDay = Replace(strFormattedDay, "/", "")
 
-   GetDayFile = objWshShell.CurrentDirectory & "\..\" & strFormattedDay & ".txt"
+   GetDayFile = objWshShell.CurrentDirectory & "\..\" & strFormattedDay & ".md"
    Set objWshShell = Nothing
+End Function
+
+'引数で受けたファイル名を特定のファイルで開く
+Function OpenFileBySpecificApp(file)
+ 'ファイルオープン
+ Set obj = WScript.CreateObject("WScript.Shell")
+ 'ファイルを開くアプリケーションをフルパスで指定
+ Dim app
+ app = "C:\Users\jortest\AppData\Local\atom\atom.exe"
+
+ obj.Run app & " - " & file
 End Function

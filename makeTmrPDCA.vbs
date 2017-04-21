@@ -13,7 +13,7 @@ lngWeekday = Weekday(Now)
 
 'ファイルを上書きコピーする
 Dim str_from
-str_from = objWshShell.CurrentDirectory & "\" & "hinagata.txt"
+str_from = objWshShell.CurrentDirectory & "\" & "hinagata.md"
 Dim str_to '一つ上のフォルダとする
 str_to   = GetDayFile(1)
 
@@ -25,4 +25,5 @@ Set objWshShell = Nothing
 Set objWSH_FUNC = Nothing
 Set objFS = Nothing
 
-CreateObject("Shell.Application").ShellExecute str_to
+'ファイルオープン
+OpenFileBySpecificApp(str_to)
